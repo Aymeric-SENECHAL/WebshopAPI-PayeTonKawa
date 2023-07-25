@@ -1,6 +1,7 @@
 package com.payetonkawa.payetonkawa.orders;
 
 import com.payetonkawa.payetonkawa.customers.Customers;
+import com.payetonkawa.payetonkawa.products.Products;
 import lombok.Builder;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,11 +19,6 @@ public class OrdersController {
     @GetMapping("{customerId}/orders")
     public List<Orders> getAllOrdersByCustomer(@PathVariable UUID customerId) {
         return ordersService.getAllOrdersByCustomer(customerId);
-    }
-
-    @PostMapping("{customerId}/orders")
-    public  Orders createOrder(@PathVariable UUID customerId, @RequestBody Orders orders){
-        return ordersService.createOrder(customerId, orders);
     }
 
 }
