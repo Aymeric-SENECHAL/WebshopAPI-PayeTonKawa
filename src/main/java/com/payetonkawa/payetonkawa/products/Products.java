@@ -25,7 +25,7 @@ public class Products extends DefaultEntity {
 
     @Column
     private String name;
-    
+
     @Column()
     private String description;
 
