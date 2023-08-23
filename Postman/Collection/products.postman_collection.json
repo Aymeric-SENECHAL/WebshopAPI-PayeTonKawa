@@ -1,0 +1,83 @@
+{
+	"info": {
+		"_postman_id": "a3de8557-77b2-43d8-ac5a-38a716f16d82",
+		"name": "products",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "28717599"
+	},
+	"item": [
+		{
+			"name": "{{BaseUrl}}/products",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "password",
+						"username": "user"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{BaseUrl}}/products"
+			},
+			"response": []
+		},
+		{
+			"name": "{{BaseUrl}}/products/2c1cf924-902c-46de-874b-0ec9b36362a5",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "password",
+						"username": "user"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{BaseUrl}}/products/2c1cf924-902c-46de-874b-0ec9b36362a5"
+			},
+			"response": []
+		},
+		{
+			"name": "{{BaseUrl}}/products",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "password",
+						"username": "user"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"price\": \"12\",\r\n  \"name\": \"test\",\r\n  \"description\": \"test\",\r\n  \"color\": \"test\",\r\n  \"stock\": \"1000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{BaseUrl}}/products"
+			},
+			"response": []
+		},
+		{
+			"name": "{{BaseUrl}}/products/2b5daf31-f728-442a-bd0c-6df6f31fbba3",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "password",
+						"username": "user"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": "{{BaseUrl}}/products/2b5daf31-f728-442a-bd0c-6df6f31fbba3"
+			},
+			"response": []
+		}
+	]
+}
