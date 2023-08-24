@@ -1,0 +1,83 @@
+{
+	"info": {
+		"_postman_id": "fe1effaf-2ae5-4b09-839c-b8587ed3cdda",
+		"name": "Orders",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "28717599"
+	},
+	"item": [
+		{
+			"name": "{{BaseUrl}}/orders",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "password",
+						"username": "user"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{BaseUrl}}/orders"
+			},
+			"response": []
+		},
+		{
+			"name": "{{BaseUrl}}/orders",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "password",
+						"username": "user"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"customers\": {\r\n    \"id\": \"39f1d03a-85ce-456e-bd24-e6dd24b286bb\",\r\n    \"createdAt\": \"2023-02-19T15:04:34.584Z\",\r\n    \"name\": \"Lela Dickinson\",\r\n    \"username\": \"Sienna30\",\r\n    \"firstname\": \"Lauren\",\r\n    \"lastname\": \"Howell\",\r\n    \"postalCode\": \"85106-9637\",\r\n    \"adressCity\": \"Adamland\",\r\n    \"profileFirstname\": \"Wayne\",\r\n    \"profileLastname\": \"Treutel\",\r\n    \"companyName\": \"Smitham - Balistreri\",\r\n    \"email\": null,\r\n    \"token\": null,\r\n    \"ordersList\": []\r\n  },\r\n  \"productsList\": [{\r\n    \"id\": \"2c1cf924-902c-46de-874b-0ec9b36362a5\",\r\n    \"createdAt\": \"2023-02-20T00:25:44.329Z\",\r\n    \"price\": \"85.00\",\r\n    \"name\": \"Peter Crona\",\r\n    \"description\": \"The Football Is Good For Training And Recreational Purposes\",\r\n    \"color\": \"green\",\r\n    \"stock\": \"29758\",\r\n    \"ordersList\": []\r\n  }]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{BaseUrl}}/orders"
+			},
+			"response": []
+		},
+		{
+			"name": "{{BaseUrl}}/customers/0a60b753-f61f-42bc-b4eb-74ca50009bad/orders",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "password",
+						"username": "user"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{BaseUrl}}/customers/0a60b753-f61f-42bc-b4eb-74ca50009bad/orders"
+			},
+			"response": []
+		},
+		{
+			"name": "{{BaseUrl}}/orders/24b56fac-b26a-472d-b800-e579f3d026ed",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "password",
+						"username": "user"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": "{{BaseUrl}}/orders/24b56fac-b26a-472d-b800-e579f3d026ed"
+			},
+			"response": []
+		}
+	]
+}
