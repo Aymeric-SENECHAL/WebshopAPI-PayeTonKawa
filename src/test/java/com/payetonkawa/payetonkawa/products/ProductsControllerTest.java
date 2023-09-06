@@ -86,4 +86,15 @@ class ProductsControllerTest {
         assertEquals(product, result);
         verify(productsService, times(1)).createProducts(product);
     }
+
+    @Test
+    void deleteProductsByID() {
+        UUID productsID = UUID.randomUUID();
+
+        // Appelez la méthode du contrôleur que vous testez
+        productsController.deleteProductsByID(productsID);
+
+        // Vérifiez que la méthode du service correspondante a été appelée une fois avec l'ID approprié
+        verify(productsService, times(1)).deleteProductsByID(productsID);
+    }
 }
