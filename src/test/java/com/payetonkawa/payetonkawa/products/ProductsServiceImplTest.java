@@ -53,11 +53,6 @@ class ProductsServiceImplTest {
     }
 
     @Test
-    void getProductsByCustomersIDAndOrdersID() {
-        // Simulate this method's behavior with mocks
-    }
-
-    @Test
     void createProducts() {
         Products product = new Products();
         when(productsRepository.save(product)).thenReturn(product);
@@ -75,5 +70,25 @@ class ProductsServiceImplTest {
 
         assertDoesNotThrow(() -> productsService.deleteProductsByID(productId));
         verify(productsRepository, times(1)).deleteById(productId);
+    }
+
+    @Test
+    void getProductsByCustomersIDAndOrdersID() {
+        UUID customersID = UUID.randomUUID();
+        UUID ordersID = UUID.randomUUID();
+
+        // Créez une liste de produits simulée que vous attendez de retourner
+        List<Products> expectedProducts = new ArrayList<>();
+        // Ajoutez des produits simulés à la liste expectedProducts ici
+
+        // Configurez le comportement du mock pour renvoyer expectedProducts lorsque la méthode est appelée
+        when(productsRepository.getProductsByCustomersIDAndOrdersID(customersID, ordersID))
+                .thenReturn(expectedProducts);
+
+        // Appelez la méthode du service que vous testez
+        List<Products> result = productsService.getProductsByCustomersIDAndOrdersID(customersID, ordersID);
+
+        // Vérifiez si le résultat est égal à expectedProducts
+        assertEquals(expectedProducts, result);
     }
 }
