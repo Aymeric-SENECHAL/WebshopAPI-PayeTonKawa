@@ -16,6 +16,8 @@ import static org.mockito.Mockito.mock;
 
 class OrdersTest {
     private Orders order;
+    private Customers customers;
+    private List<Products> productsList;
 
     @BeforeEach
     void setUp() {
@@ -83,5 +85,16 @@ class OrdersTest {
 
         assertEquals(customers, orderWithArgs.getCustomers());
         assertEquals(productsList, orderWithArgs.getProductsList());
+    }
+
+    @Test
+    void builder() {
+        Orders builtOrder = Orders.builder()
+                .customers(customers)
+                .productsList(productsList)
+                .build();
+
+        assertEquals(customers, builtOrder.getCustomers());
+        assertEquals(productsList, builtOrder.getProductsList());
     }
 }

@@ -1,6 +1,4 @@
 package com.payetonkawa.payetonkawa.products;
-import com.payetonkawa.payetonkawa.products.Products;
-import com.payetonkawa.payetonkawa.products.ProductsRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
