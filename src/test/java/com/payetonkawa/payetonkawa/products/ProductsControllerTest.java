@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 
 import java.util.*;
 
@@ -25,6 +27,7 @@ class ProductsControllerTest {
     @BeforeEach
     public void setUp() {
         MockitoAnnotations.initMocks(this);
+        productsController = new ProductsController(productsService);
     }
 
     @Test
@@ -56,16 +59,20 @@ class ProductsControllerTest {
     void getProductsByCustomersIDAndOrdersID() {
         UUID customersID = UUID.randomUUID();
         UUID ordersID = UUID.randomUUID();
-        List<Products> expectedProducts = new ArrayList<>();
 
-        // Configure the mock behavior
-        when(productsRepository.getProductsByCustomersIDAndOrdersID(customersID, ordersID))
+        // Créer une liste de produits simulée que vous attendez de retourner
+        List<Products> expectedProducts = new ArrayList<>();
+        // Ajoutez des produits simulés à la liste expectedProducts ici
+
+        // Configurez le comportement du service pour renvoyer expectedProducts lorsque la méthode est appelée
+        when(productsService.getProductsByCustomersIDAndOrdersID(customersID, ordersID))
                 .thenReturn(expectedProducts);
 
-        List<Products> result = productsService.getProductsByCustomersIDAndOrdersID(customersID, ordersID);
+        // Appelez la méthode du contrôleur que vous testez
+        List<Products> result = productsController.getProductsByCustomersIDAndOrdersID(customersID, ordersID);
 
+        // Vérifiez si le résultat est égal à expectedProducts
         assertEquals(expectedProducts, result);
-        verify(productsRepository, times(1)).getProductsByCustomersIDAndOrdersID(customersID, ordersID);
     }
 
 
